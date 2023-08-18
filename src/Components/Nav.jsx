@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-export default function Nav() {
+export default function Nav({mode, toggle}) {
+  const toggleMode = ()=>{
+    if(mode === 'light'){
+      toggle('dark');
+      document.body.style.backgroundColor = '#0d1319';
+    }
+    else{
+      toggle('light');
+      document.body.style.backgroundColor = 'white';
+    }
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={mode}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">WordWizard TextTool</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,8 +30,8 @@ export default function Nav() {
           </ul>
           <form class="d-flex" role="search">
             <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-              <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleMode}/>
+              <label class="form-check-label" for="flexSwitchCheckDefault" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>Darkmode</label>
             </div>
           </form>
         </div>

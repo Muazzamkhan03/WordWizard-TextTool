@@ -9,9 +9,9 @@ function App() {
 
   return (
     <>
-    <Nav />
-    <div className="container">
-    <Form />
+    <Nav mode = {mode} toggle = {setMode}/>
+    <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
+    <Form mode = {mode}/>
     </div>
     </>
   );

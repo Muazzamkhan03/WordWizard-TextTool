@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 
 
-export default function Form() {
+export default function Form({mode}) {
 
     const [text, setText] = useState('');
 
     return (
-        <>
-            <div className="container my-4">
+        <div>
+            <div className="container my-4" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>
                 <h1>Enter your text</h1>
                 <form>
                     <div className="mb-3">
-                        <textarea name="text" id="text" cols="140" rows="10" value={text} onChange={(e) => setText(e.target.value)}></textarea>
+                        <textarea name="text" id="text" cols="100" rows="10" value={text} onChange={(e) => setText(e.target.value)} style={{color: mode==='light'?'#000000':'#000080', backgroundColor: mode==='light'?'#FFFFFF':'#87929e'}}></textarea>
                     </div>
                 </form>
                 <button type="button" className="btn btn-primary mx-1" onClick={/*TODO: Implement the handlers */ () => console.log('c')}>To Upper case</button>
@@ -31,11 +31,11 @@ export default function Form() {
                     <button type="button" className="btn btn-primary mx-1" onClick={/*TODO: Implement the handlers */ () => console.log('c')}>Copy Text</button>
                 </div>
             </div>
-            <div className="container">
+            <div className="container" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>
                 <h3>Text Stats</h3>
                 <h6>Words: {text.split(' ').length}</h6>
                 <h6>Characters: {text.length}</h6>
             </div>
-        </>
+        </div>
     )
 }
