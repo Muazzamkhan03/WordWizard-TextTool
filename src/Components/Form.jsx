@@ -41,7 +41,7 @@ export default function Form({ mode, alert }) {
         setText(text.split('').map(char => char.charCodeAt(0).toString(2)).join(' '));
         alert('success', 'Converted to binary');
     }
-    
+
     const toMorse = () => {
         const morseCodes = {
             'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
@@ -52,7 +52,7 @@ export default function Form({ mode, alert }) {
             '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
             '6': '-....', '7': '--...', '8': '---..', '9': '----.',
             ' ': '/'
-          };
+        };
         setText(text.toUpperCase().split('').map(char => morseCodes[char] || char).join(' '));
         alert('success', 'Converted to morse code');
     }
@@ -77,31 +77,33 @@ export default function Form({ mode, alert }) {
             <div className="container my-4" style={{ color: mode === 'light' ? '#000000' : '#FFFFFF' }}>
                 <h1>Enter your text</h1>
                 <form>
-                    <div className="mb-3">
-                        <textarea name="text" id="text" cols="100" rows="10" value={text} onChange={(e) => setText(e.target.value)} style={{ color: mode === 'light' ? '#000000' : '#000080', backgroundColor: mode === 'light' ? '#FFFFFF' : '#87929e' }}></textarea>
+                    <div className="form-group">
+                        <textarea className='form-control' name="text" id="text" rows="10" value={text} onChange={(e) => setText(e.target.value)} style={{ color: mode === 'light' ? '#000000' : '#000080', backgroundColor: mode === 'light' ? '#FFFFFF' : '#87929e' }}></textarea>
                     </div>
                 </form>
-                <button type="button" className="btn btn-primary mx-1" onClick={toUpper}>To Upper case</button>
-                <button type="button" className="btn btn-primary mx-1" onClick={toLower}>To Lower case</button>
-                <button type="button" className="btn btn-primary mx-1" onClick={toTitle}>To Title case</button>
-                <button type="button" className="btn btn-primary mx-1" onClick={toSentence}>To Sentence case</button>
-                <button type="button" className="btn btn-primary mx-1" onClick={toCamel}>To camelCase</button>
-                <button type="button" className="btn btn-primary mx-1" onClick={toPascal}>To PascalCase</button>
-
                 <div className='my-2'>
-                    <button type="button" className="btn btn-primary mx-1" onClick={toBinary}>To Binary</button>
-                    <button type="button" className="btn btn-primary mx-1" onClick={toMorse}>To Morsecode</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toUpper}>To Upper case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toLower}>To Lower case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toTitle}>To Title case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toSentence}>To Sentence case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toCamel}>To camelCase</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toPascal}>To PascalCase</button>
                 </div>
 
                 <div className='my-2'>
-                    <button type="button" className="btn btn-primary mx-1" onClick={removeSpace}>Remove whitespaces</button>
-                    <button type="button" className="btn btn-primary mx-1" onClick={clear}>Clear Text</button>
-                    <button type="button" className="btn btn-primary mx-1" onClick={copy}>Copy Text</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toBinary}>To Binary</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toMorse}>To Morsecode</button>
+                </div>
+
+                <div className='my-2'>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={removeSpace}>Remove whitespaces</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={clear}>Clear Text</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={copy}>Copy Text</button>
                 </div>
             </div>
             <div className="container" style={{ color: mode === 'light' ? '#000000' : '#FFFFFF' }}>
                 <h3>Text Stats</h3>
-                <h6>Words: {text.split(' ').filter((word)=>word!='').length}</h6>
+                <h6>Words: {text.split(' ').filter((word) => word !== '').length}</h6>
                 <h6>Characters: {text.length}</h6>
             </div>
         </div>
