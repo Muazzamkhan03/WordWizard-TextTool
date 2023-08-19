@@ -31,7 +31,7 @@ export default function Nav({mode, toggle}) {
           <form class="d-flex" role="search">
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleMode}/>
-              <label class="form-check-label" for="flexSwitchCheckDefault" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>Darkmode</label>
+              <label class="form-check-label" for="flexSwitchCheckDefault" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>Lightmode</label>
             </div>
           </form>
         </div>

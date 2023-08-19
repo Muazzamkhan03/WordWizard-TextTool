@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
 
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
 
   return (
     <>
