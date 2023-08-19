@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function Alert(mode, message) {
+export default function Alert({mode}) {
     return (
-        <div className={`alert alert-${mode} alert-dismissible fade show`} role="alert">
-            <strong>{message}</strong> 
+        mode && <div className={`alert alert-${mode.mode} alert-dismissible fade show`} role="alert"> 
+            <strong>{mode.message}</strong> 
         </div>
     );
 }

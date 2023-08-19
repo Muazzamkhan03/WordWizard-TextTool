@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 
-export default function Nav({mode, toggle}) {
+export default function Nav({mode, toggle, alert}) {
   const toggleMode = ()=>{
     if(mode === 'dark'){
       document.body.style.backgroundColor = 'white';
       toggle('light');
+      alert('success', 'Light mode on');
     }
     else{
       toggle('dark');
       document.body.style.backgroundColor = '#0d1319';
+      alert('success', 'Dark mode on');
     }
   }
 
