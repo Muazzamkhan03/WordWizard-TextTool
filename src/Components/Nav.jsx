@@ -33,10 +33,10 @@ export default function Nav({mode, toggle, alert}) {
               <Link className="nav-link" to="/about">About</Link>
             </li> */}
           </ul>
-          <form class="d-flex" role="search">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleMode}/>
-              <label class="form-check-label" for="flexSwitchCheckDefault" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>Lightmode</label>
+          <form className="d-flex" role="search">
+            <div className="form-check form-switch">
+              <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={toggleMode}/>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{color: mode==='light'?'#000000':'#FFFFFF'}}>Lightmode</label>
             </div>
           </form>
         </div>

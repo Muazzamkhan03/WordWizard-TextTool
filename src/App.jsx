@@ -27,7 +27,9 @@ function App() {
     <>
       {/* <Router> */}
         <Nav mode={mode} toggle={setMode} alert={showAlert} />
+        <div style={{height: '5vh'}}>
         <Alert mode={alertMode} />
+        </div>
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
           {/* <Routes>
             <Route path='/' element={<Form mode={mode} alert={showAlert} />} />
