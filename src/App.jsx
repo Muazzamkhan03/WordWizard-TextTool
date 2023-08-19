@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Nav from './Components/Nav';
 import Form from './Components/Form';
+import About from './Components/About'
 import Alert from './Components/Alert';
 import './App.css';
 
