@@ -103,7 +103,7 @@ export default function Form({ mode, alert }) {
             </div>
             <div className="container" style={{ color: mode === 'light' ? '#000000' : '#FFFFFF' }}>
                 <h3>Text Stats</h3>
-                <h6>Words: {text.split(' ').filter((word) => word !== '').length}</h6>
+                <h6>Words: {text.split(/\s+/).filter((word) => word !== '').length}</h6>
                 <h6>Characters: {text.length}</h6>
             </div>
         </div>
