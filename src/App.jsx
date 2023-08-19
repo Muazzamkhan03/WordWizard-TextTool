@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Nav from './Components/Nav';
 import Form from './Components/Form';
-import About from './Components/About'
+// import About from './Components/About'
 import Alert from './Components/Alert';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
 
@@ -25,17 +25,18 @@ function App() {
   return (
 
     <>
-      <Router>
+      {/* <Router> */}
         <Nav mode={mode} toggle={setMode} alert={showAlert} />
         <Alert mode={alertMode} />
         <div className="container" style={{ display: 'flex', justifyContent: 'center' }}>
-          <Routes>
+          {/* <Routes>
             <Route path='/' element={<Form mode={mode} alert={showAlert} />} />
             <Route path='/about' element={<About />} />
             <Route path='*' element={<Form mode={mode} alert={showAlert} />} />
-          </Routes>
+          </Routes> */}
+          <Form mode={mode} alert={showAlert}/>
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
