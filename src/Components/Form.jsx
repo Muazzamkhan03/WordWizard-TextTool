@@ -38,10 +38,22 @@ export default function Form({ mode, alert }) {
     }
 
     const toBinary = () => {
+        setText(text.split('').map(char => char.charCodeAt(0).toString(2)).join(' '));
         alert('success', 'Converted to binary');
     }
     
     const toMorse = () => {
+        const morseCodes = {
+            'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
+            'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
+            'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
+            'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
+            'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..',
+            '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
+            '6': '-....', '7': '--...', '8': '---..', '9': '----.',
+            ' ': '/'
+          };
+        setText(text.toUpperCase().split('').map(char => morseCodes[char] || char).join(' '));
         alert('success', 'Converted to morse code');
     }
 
