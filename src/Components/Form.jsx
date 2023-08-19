@@ -78,27 +78,27 @@ export default function Form({ mode, alert }) {
                 <h1>Enter your text</h1>
                 <form>
                     <div className="form-group">
-                        <textarea className='form-control' name="text" id="text" rows="10" value={text} onChange={(e) => setText(e.target.value)} style={{ color: mode === 'light' ? '#000000' : '#000080', backgroundColor: mode === 'light' ? '#FFFFFF' : '#87929e' }}></textarea>
+                        <textarea className='form-control' name="text" id="text" rows="10" value={text} onChange={(e) => setText(e.target.value)} style={{ color: mode === 'light' ? '#000000' : '#0d1319', backgroundColor: mode === 'light' ? '#FFFFFF' : '#c3cad2' }}></textarea>
                     </div>
                 </form>
                 <div className='my-2'>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toUpper}>To Upper case</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toLower}>To Lower case</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toTitle}>To Title case</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toSentence}>To Sentence case</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toCamel}>To camelCase</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toPascal}>To PascalCase</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toUpper}>To Upper case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toLower}>To Lower case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toTitle}>To Title case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toSentence}>To Sentence case</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toCamel}>To camelCase</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toPascal}>To PascalCase</button>
                 </div>
 
                 <div className='my-2'>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toBinary}>To Binary</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={toMorse}>To Morsecode</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toBinary}>To Binary</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={toMorse}>To Morsecode</button>
                 </div>
 
                 <div className='my-2'>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={removeSpace}>Remove whitespaces</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={clear}>Clear Text</button>
-                    <button type="button" className="btn btn-primary mx-1 my-1" onClick={copy}>Copy Text</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={removeSpace}>Remove whitespaces</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={clear}>Clear Text</button>
+                    <button type="button" className="btn btn-primary mx-1 my-1" disabled={text.length===0}onClick={copy}>Copy Text</button>
                 </div>
             </div>
             <div className="container" style={{ color: mode === 'light' ? '#000000' : '#FFFFFF' }}>
