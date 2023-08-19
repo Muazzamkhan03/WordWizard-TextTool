@@ -2,13 +2,13 @@ import React, {useState} from 'react';
 
 export default function Nav({mode, toggle}) {
   const toggleMode = ()=>{
-    if(mode === 'light'){
-      toggle('dark');
-      document.body.style.backgroundColor = '#0d1319';
+    if(mode === 'dark'){
+      document.body.style.backgroundColor = 'white';
+      toggle('light');
     }
     else{
-      toggle('light');
-      document.body.style.backgroundColor = 'white';
+      toggle('dark');
+      document.body.style.backgroundColor = '#0d1319';
     }
   }
 
