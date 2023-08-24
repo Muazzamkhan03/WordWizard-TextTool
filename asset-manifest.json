@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/WordWizard-TextTool/static/css/main.9abd524c.css",
-    "main.js": "/WordWizard-TextTool/static/js/main.b6a5e2df.js",
+    "main.js": "/WordWizard-TextTool/static/js/main.e428ed67.js",
     "index.html": "/WordWizard-TextTool/index.html",
     "main.9abd524c.css.map": "/WordWizard-TextTool/static/css/main.9abd524c.css.map",
-    "main.b6a5e2df.js.map": "/WordWizard-TextTool/static/js/main.b6a5e2df.js.map"
+    "main.e428ed67.js.map": "/WordWizard-TextTool/static/js/main.e428ed67.js.map"
   },
   "entrypoints": [
     "static/css/main.9abd524c.css",
-    "static/js/main.b6a5e2df.js"
+    "static/js/main.e428ed67.js"
   ]
 }
